@@ -34,6 +34,7 @@ import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.rockscoder.easyphotofilters.adapter.ViewPagerAdapter;
 import com.rockscoder.easyphotofilters.fragment.EditImageFragment;
 import com.rockscoder.easyphotofilters.fragment.FiltersListFragment;
 import com.rockscoder.easyphotofilters.model.Param;
@@ -212,34 +213,7 @@ public class MainActivity extends AppCompatActivity implements FiltersListFragme
         contrastFinal = 1.0f;
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
-        }
-    }
 
     // load the default image from assets on app launch
     private void loadImage() {
