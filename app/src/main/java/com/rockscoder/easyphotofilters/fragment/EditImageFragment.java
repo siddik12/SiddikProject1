@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 
 import com.rockscoder.easyphotofilters.R;
+import com.rockscoder.easyphotofilters.interfaces.EditImageFragmentListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -110,15 +111,5 @@ public class EditImageFragment extends Fragment implements SeekBar.OnSeekBarChan
         seekBarSaturation.setProgress(10);
     }
 
-    public interface EditImageFragmentListener {
-        void onBrightnessChanged(int brightness);
 
-        void onSaturationChanged(float saturation);
-
-        void onContrastChanged(float contrast);
-
-        void onEditStarted();
-
-        void onEditCompleted();
-    }
 }

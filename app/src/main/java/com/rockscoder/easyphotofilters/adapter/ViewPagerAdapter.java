@@ -13,6 +13,7 @@ import java.util.List;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
+
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -39,4 +40,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return mFragmentTitleList.get(position);
     }
+
+
+
+
 }

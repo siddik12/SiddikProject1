@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rockscoder.easyphotofilters.R;
-import com.zomato.photofilters.imageprocessors.Filter;
+import com.rockscoder.easyphotofilters.interfaces.ThumbnailsAdapterListener;
 import com.zomato.photofilters.utils.ThumbnailItem;
 
 import java.util.List;
@@ -60,6 +60,7 @@ public class ThumbnailsAdapter extends RecyclerView.Adapter<ThumbnailsAdapter.My
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+
         final ThumbnailItem thumbnailItem = thumbnailItemList.get(position);
 
         holder.thumbnail.setImageBitmap(thumbnailItem.image);
@@ -87,7 +88,5 @@ public class ThumbnailsAdapter extends RecyclerView.Adapter<ThumbnailsAdapter.My
         return thumbnailItemList.size();
     }
 
-    public interface ThumbnailsAdapterListener {
-        void onFilterSelected(Filter filter);
-    }
+
 }

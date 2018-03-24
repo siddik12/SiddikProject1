@@ -13,9 +13,6 @@ import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.graphics.BitmapCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +34,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.rockscoder.easyphotofilters.adapter.ViewPagerAdapter;
 import com.rockscoder.easyphotofilters.fragment.EditImageFragment;
 import com.rockscoder.easyphotofilters.fragment.FiltersListFragment;
+import com.rockscoder.easyphotofilters.interfaces.EditImageFragmentListener;
+import com.rockscoder.easyphotofilters.interfaces.FiltersListFragmentListener;
 import com.rockscoder.easyphotofilters.model.Param;
 import com.rockscoder.easyphotofilters.utils.BitmapUtils;
 import com.rockscoder.easyphotofilters.utils.HttpClient;
@@ -54,7 +53,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements FiltersListFragment.FiltersListFragmentListener, EditImageFragment.EditImageFragmentListener  {
+public class MainActivity extends AppCompatActivity implements FiltersListFragmentListener, EditImageFragmentListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 

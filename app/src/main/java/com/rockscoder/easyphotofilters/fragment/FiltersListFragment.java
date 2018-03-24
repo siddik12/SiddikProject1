@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import com.rockscoder.easyphotofilters.MainActivity;
 import com.rockscoder.easyphotofilters.R;
 import com.rockscoder.easyphotofilters.adapter.ThumbnailsAdapter;
+import com.rockscoder.easyphotofilters.interfaces.FiltersListFragmentListener;
+import com.rockscoder.easyphotofilters.interfaces.ThumbnailsAdapterListener;
 import com.rockscoder.easyphotofilters.utils.BitmapUtils;
 import com.rockscoder.easyphotofilters.utils.SpacesItemDecoration;
 import com.zomato.photofilters.FilterPack;
@@ -28,7 +30,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FiltersListFragment extends Fragment implements ThumbnailsAdapter.ThumbnailsAdapterListener {
+public class FiltersListFragment extends Fragment implements ThumbnailsAdapterListener {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
 
@@ -134,7 +136,5 @@ public class FiltersListFragment extends Fragment implements ThumbnailsAdapter.T
             listener.onFilterSelected(filter);
     }
 
-    public interface FiltersListFragmentListener {
-        void onFilterSelected(Filter filter);
-    }
+
 }
