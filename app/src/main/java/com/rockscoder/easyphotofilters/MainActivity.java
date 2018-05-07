@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements FiltersListFragme
     Bitmap finalImage;
 
     FiltersListFragment filtersListFragment;
+    FiltersListFragment filtersListFragment1;
     EditImageFragment editImageFragment;
 
     // modified image values
@@ -133,12 +134,16 @@ public class MainActivity extends AppCompatActivity implements FiltersListFragme
         // adding filter list fragment
         filtersListFragment = new FiltersListFragment();
         filtersListFragment.setListener(this);
+        // adding filter list fragment
+        filtersListFragment1 = new FiltersListFragment();
+        filtersListFragment1.setListener(this);
 
         // adding edit image fragment
         editImageFragment = new EditImageFragment();
         editImageFragment.setListener(this);
 
         adapter.addFragment(filtersListFragment, getString(R.string.tab_filters));
+        adapter.addFragment(filtersListFragment1, getString(R.string.tab_filters));
         adapter.addFragment(editImageFragment, getString(R.string.tab_edit));
 
         viewPager.setAdapter(adapter);
@@ -345,7 +350,7 @@ public class MainActivity extends AppCompatActivity implements FiltersListFragme
             Log.d("Result",res);
 
             //Picasso.with(MainActivity.this).load("http://color.photofuneditor.com/output/" + res).into(imageView);
-            Picasso.with(MainActivity.this).load("http://color.photofuneditor.com/output/" + res).into(new Target() {
+            Picasso.get().load("http://color.photofuneditor.com/output/" + res).into(new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                     Bitmap newBitmap = bitmap.copy(bitmap.getConfig(), true);
@@ -355,7 +360,7 @@ public class MainActivity extends AppCompatActivity implements FiltersListFragme
                 }
 
                 @Override
-                public void onBitmapFailed(Drawable errorDrawable) {
+                public void onBitmapFailed(Exception e, Drawable errorDrawable) {
 
                 }
 
